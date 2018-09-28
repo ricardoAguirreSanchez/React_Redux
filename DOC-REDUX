@@ -1,0 +1,29 @@
+STORE:
+Almacena estados que todos pueden usar
+Metodos que provee:
+subscribe -> le pido al store que me avise de 
+algun cambio del estado
+dispatch(action)-> permite solicitar cambios
+, no lo realizo directamente ya que eso lo hace
+la funcion reductora
+getState()-> nos trae el estado actual
+
+
+Desde el constructor de algun componente
+tenemos q pedir la suscripcion al store
+
+--------------------------------
+la FUNCION REDUCTORA lo que hace es recibir
+un estado y un action y con eso devuelve
+un nuevo estado
+---------------------------------
+los ACTION es el objeto que se pasa en
+el dispatch, tiene 
+un type : para definir la accion
+los demas son solo argumentos que se 
+usaran
+-----------------------------------
+ACTION CREATORS(es opcional) son 
+funciones que retornan un action 
+un poco mas claro
+----------------------------------
