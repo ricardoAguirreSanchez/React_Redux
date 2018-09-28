@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 
+import store from '../store';
+
 const styles = {
   products: {
     display: 'flex',
@@ -47,7 +49,12 @@ class ProductList extends Component {
   }
 
   addToCart(product) {
-
+    //el dispatch lo que hace es pedir ejecutar la funcion reductora, pasando como action
+    //un objeto {type,producto}
+    store.dispatch({
+      type:'addProducto',
+      producto: product
+    })
   }
 }
 

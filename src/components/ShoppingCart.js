@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
 
+import store from '../store';
+
 const styles = {
   footer: {
     fontWeight: 'bold'
@@ -16,6 +18,14 @@ class ShoppingCart extends Component {
     this.state = {
       cart: []
     }
+
+    //me suscribo para ver los cambios
+    store.subscribe(()=>{
+      //este es el callback q se ejecuta cada vez q me avisen de un cambio
+      this.setState({
+        cart: store.getState().cart
+      });
+    })
   }
 
   render() {
@@ -45,7 +55,10 @@ class ShoppingCart extends Component {
   }
 
   removeFromCart(product) {
-
+    store.dispatch({
+      type: 'deleteProducto',
+      producto: product
+    });
   }
 }
 
