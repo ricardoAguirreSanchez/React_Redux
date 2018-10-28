@@ -1,33 +1,33 @@
 import React, { Component } from 'react';
-import { Navbar, Grid, Row, Col } from 'react-bootstrap';
-import ProductList from './components/ProductList';
-import ShoppingCart from './components/ShoppingCart';
+import { Grid, Row, Col } from 'react-bootstrap';
+
+import TablaValores from './components/TablaValores.js';
+import Puntos from './components/Puntos.js';
+
+import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Navbar inverse staticTop>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Ecommerce</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-        </Navbar>
-
+        <Header />
         <Grid>
           <Row>
             <Col sm={8}>
-              <ProductList />
+              <TablaValores />
             </Col>
             <Col sm={4}>
-              <ShoppingCart />
+              <Puntos />
             </Col>
           </Row>
         </Grid>
+        <Footer />
       </div>
-    );
+    )
   }
 }
 

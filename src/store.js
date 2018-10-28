@@ -7,27 +7,22 @@ const reducer = (state,action) =>{
     
     if (typeof state === 'undefined') {
         return ({
-            cart:[action.product]
+            cart:action.product
         })
     }
 
-    if(action.type === 'addProducto'){
+    if(action.type === 'addMonto'){
         
         return({//voy a devolver un nuevo estado
             ...state, //copio todos los atributos del estado
-            cart: state.cart.concat(action.product)//y la que era cart es la unica q escribo
+            cart: action.product//y la que era cart es la unica q escribo
         })
         
-    }else if (action.type === 'deleteProducto'){
-        return({
-            ...state,//idem al concat pero filtramos
-            cart: state.cart.filter((unProducto)=> unProducto.id !== action.product.id)
-        })
     }
 };
 
 //exportamos el metodo createStore que recibe dentro una funcion reductora y es estado inicial
-export default createStore(reducer, {cart:[]});
+export default createStore(reducer, {cart:{}});
 
 
 
