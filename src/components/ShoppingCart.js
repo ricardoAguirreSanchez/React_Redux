@@ -57,7 +57,7 @@ class ShoppingCart extends Component {
   removeFromCart(product) {
     store.dispatch({
       type: 'deleteProducto',
-      producto: product
+      product: product
     });
   }
 }

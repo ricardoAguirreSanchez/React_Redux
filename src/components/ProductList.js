@@ -53,7 +53,7 @@ class ProductList extends Component {
     //un objeto {type,producto}
     store.dispatch({
       type:'addProducto',
-      producto: product
+      product: product
     })
   }
 }
